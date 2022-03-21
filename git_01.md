@@ -95,6 +95,13 @@ git reset --mix 版本号
 
 ##### 线上代码出现bug紧急修复的思路
 
+```
+git branch bug 创建bug分支
+git checkout bug 切换分支
+```
+
+
+
 ![image-20220321173054781](picture/image-20220321173054781.png)
 
 默认主干 叫master  
