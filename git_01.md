@@ -44,3 +44,15 @@ git status 再一次检测当前文件夹下边的状态
 git commit -m “v2” 生成第二个版本
 
 git log 查看版本记录
+
+##### git 版本回滚
+
+```
+git log 查看版本记录
+git reset --hard 版本号
+# 从 v3 回滚到 v2
+git reset --hard b21743608ace44695bc7fcce8b72a47d9fbae706
+# 再从v2 回滚到v3
+git reflog  可以查看 回滚之前的版本号
+git reset --hard 18306a1 回滚到v3版本
+```
