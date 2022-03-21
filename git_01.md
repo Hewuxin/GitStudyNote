@@ -53,6 +53,48 @@ git reset --hard 版本号
 # 从 v3 回滚到 v2
 git reset --hard b21743608ace44695bc7fcce8b72a47d9fbae706
 # 再从v2 回滚到v3
-git reflog  可以查看 回滚之前的版本号
-git reset --hard 18306a1 回滚到v3版本
+git reflog  可以查看 回滚之前的版本号g
+git reset --hard 18306a1 回滚到v3版本  版本库到工作区
 ```
+
+从版本库回滚到工作区
+
+```
+git reset --hard 版本号
+```
+
+从版本库回滚到暂存区
+
+```
+git reset --soft 版本号
+```
+
+从暂存区回滚到工作区
+
+```
+git reset HEAD
+git reset HEAD git_01.md
+```
+
+从已修改且被管理的文件回滚到未管理状态
+
+```
+git checkout 
+git checkout -- git_01.md
+```
+
+从版本库回滚到工作区已被管理状态
+
+```
+git reset --mix 版本号
+```
+
+#### 分支
+
+![image-20220321172227440](picture/image-20220321172227440.png)
+
+##### 线上代码出现bug紧急修复的思路
+
+![image-20220321173054781](picture/image-20220321173054781.png)
+
+默认主干 叫master  
