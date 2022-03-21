@@ -123,3 +123,18 @@ git branch dev 创建名为dev的新分支
 ```
 git checkout dev 切换到dev分支 在这个环境中写代码是不影响master分支的
 ```
+
+合并分支
+
+```
+git branch 查看当前分支
+git checkout master 先切换回当前分支
+git merge bug 将bug分支合并到master分支
+```
+
+删除分支
+
+```
+git branch -d bug 删除bug分支
+```
+
