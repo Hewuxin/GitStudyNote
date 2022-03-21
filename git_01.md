@@ -95,6 +95,8 @@ git reset --mix 版本号
 
 ##### 线上代码出现bug紧急修复的思路
 
+![image-20220321211909600](picture/image-20220321211909600.png)
+
 ```
 git branch bug 创建bug分支
 git checkout bug 切换分支
@@ -106,35 +108,42 @@ git checkout bug 切换分支
 
 ##### 命令
 
-打印当前所属分支
+- 打印当前所属分支
 
-```
-git branch 打印当前所属的分支
-```
+  ```
+  git branch 打印当前所属的分支
+  ```
 
-创建新的分支
+- 创建新的分支
 
-```
-git branch dev 创建名为dev的新分支
-```
+  ```
+  git branch dev 创建名为dev的新分支
+  ```
 
-切换分支
+- 切换分支
 
-```
-git checkout dev 切换到dev分支 在这个环境中写代码是不影响master分支的
-```
+  ```
+  git checkout dev 切换到dev分支 在这个环境中写代码是不影响master分支的
+  ```
 
-合并分支
+- 合并分支
+  - 合并解决bug之后的分支和未解决bug而在开发新功能的分支时可能会产生冲突，此时该冲突需要手动解决
 
-```
-git branch 查看当前分支
-git checkout master 先切换回当前分支
-git merge bug 将bug分支合并到master分支
-```
+    ```
+    git branch 查看当前分支
+    git checkout master 先切换回当前分支
+    git merge bug 将bug分支合并到master分支
+    ```
 
-删除分支
+- 删除分支
 
-```
-git branch -d bug 删除bug分支
-```
+  ```
+  git branch -d bug 删除bug分支
+  ```
+
+##### 工作流
+
+![image-20220321212759360](picture/image-20220321212759360.png)
+
+
 
