@@ -98,3 +98,23 @@ git reset --mix 版本号
 ![image-20220321173054781](picture/image-20220321173054781.png)
 
 默认主干 叫master  
+
+##### 命令
+
+打印当前所属分支
+
+```
+git branch 打印当前所属的分支
+```
+
+创建新的分支
+
+```
+git branch dev 创建名为dev的新分支
+```
+
+切换分支
+
+```
+git checkout dev 切换到dev分支 在这个环境中写代码是不影响master分支的
+```
