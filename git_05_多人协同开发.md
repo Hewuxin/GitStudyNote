@@ -62,6 +62,24 @@
 
 7. code review
 
+##### 测试上线
+
+```
+git checkout -b release 创建release分支并切换到release分支
+git push origin release 
+下一步 测试人员可以把代码拉走之后进行测试
+测试完成之后可以选择pull request也可以选择通过master分支合并release分支
+git branch
+git checkout dev
+git merge release 将release分支合并到dev
+git branch -d release 删除release分支
+git branch 
+git checkout master 此时master只有v1
+git pull origin master 
+git tag -a v2 —m "第二版 增加斗地主功能"
+git push origin --tags
+```
+
 ##### 版本管理
 
 ```
@@ -128,21 +146,6 @@ git push origin --tags 向远程仓库推送标签
 
    3. 功能开发完成之后，并且已经review、merge之后就可以选择delete branch
 
+##### 注意事项：
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+在code review 或 merge中也可能产生冲突，之后先解决冲突然后再合并
