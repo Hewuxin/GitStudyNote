@@ -7,8 +7,22 @@
 
    ```
    git config --global user.email "you@email.com"
-   git config --global user.name  "Youer name"
+   git config --global user.name  "Your name"
    ```
+
+查询配置信息
+
+```
+   git config --list
+```
+
+配置git的密钥 
+
+```
+   ssh-keygen -t rsa
+```
+
+
 
 ##### git 生成版本
 
