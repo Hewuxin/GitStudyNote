@@ -122,6 +122,12 @@ git checkout bug 切换分支
 
 ##### 命令
 
+- 查看所有本地分支
+
+  ```bash
+  git branch -a
+  ```
+
 - 打印当前所属分支
 
   ```
@@ -148,6 +154,20 @@ git checkout bug 切换分支
     git checkout master 先切换回当前分支
     git merge bug 将bug分支合并到master分支
     ```
+
+- 把远程分支的代码pull到本地分支
+
+  ```bash
+  git pull <远程主机名> <远程分支名>:<本地分支名>
+  git pull origin master:xf  取回origin主机的master分支，与本地的xf分支合并 
+  ```
+
+- 把远程分支的代码push到本地分支
+
+  ```bash
+  git push <远程主机名> <本地分支名>:<远程分支名>
+  git push origin xf:master  把本地的xf分支推送到origin主机的master分支 
+  ```
 
 - 删除分支
 

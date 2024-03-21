@@ -1,4 +1,58 @@
-#### github/gitlab
+## git将本地已有的一个项目上传到新建的git仓库
+
+### 1. clone+copy
+
+直接将远程仓库拉到本地，然后再把自己本地的项目拷贝到仓库中。然后push到远程仓库上。**适用于本地项目不是一个git仓库的情况**
+
+1. clone
+
+   ```bash
+   git clone git@github.com:Hewuxin/TestProject.git
+   ```
+
+2. 将本地项目拷贝到TestProject目录下
+3. 添加到缓存区，提交
+
+    ```bash
+    git add .
+    git commit -m ""
+    ```
+
+4. push到远程仓库上面
+
+   ```bash
+   git push -u orgin master
+   ```
+
+### 2.强行合并两个仓库
+
+现将本地的项目初始化为一个git仓库，然后再**强行合并本地仓库和远程仓库**，由于这两个仓库是完全不同的两个仓库，所以直接pull会报错，需要在**pull的时候加上-allow-unreleated-histories**才可以pull成功。
+
+1.  新建git仓库，将本地项目设置为一个git仓库。add commit
+
+   ```bash
+   git init
+   git add .
+   git commit -m "push current files"
+   ```
+
+2. 将本地仓库与远程仓库关联起来
+
+   ```bash
+   git remote add origin git@github.com:Hewuxin/TestProject.git
+   ```
+
+3. pull 远程仓库的内容，更新本地仓库，使用 --allow-unrelated-histories忽略本地仓库和远程仓库的无关性，强行合并
+
+   ```bash
+   git pull orgin main --allow-unrelated-histories
+   ```
+
+4. 把本地仓库的内容push到远程仓库
+
+   ```bash
+   git push -u origin master
+   ```
 
 ##### 注册账号
 
@@ -8,21 +62,21 @@
 
 1. 本地没有代码
 
-   ```
-   首先创建 README.md
-   git init 
-   git add README.md
-   git commit -m "first commit"
-   git remote add origin https://github.com/heyuyang/git_note.git 给远端仓库起别名
-   git push -u origin 分支  向远程推送代码
-   ```
+```
+首先创建 README.md
+git init 
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/heyuyang/git_note.git 给远端仓库起别名
+git push -u origin 分支  向远程推送代码
+```
 
 2. 本地有代码
 
-   ```
-   git remote add origin https://github.com/heyuyang/git_not.git
-   git push -u origin master 推送到远端master分支
-   ```
+```
+git remote add origin https://github.com/heyuyang/git_not.git
+git push -u origin master 推送到远端master分支
+```
 
 ##### 公司新电脑第一次获取代码
 
