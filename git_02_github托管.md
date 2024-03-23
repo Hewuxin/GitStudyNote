@@ -158,3 +158,37 @@ git fetch origin dev  把代码从远程仓库拉到版本库
 git merge origin/dev  合并从远程仓库拉来的分支 通常要加前缀origin/
 ```
 
+## 问题解决
+
+### 1. 分支推送错误
+
+#### 问题描述：
+
+​	$\color{red}本应该推送本地的dev分支到远程，错把main分支推送$
+
+#### 方法一
+
+撤销最后一次的 `git push`，不用指定特定的提交哈希值。这将覆盖远程分支为当前本地分支的状态。
+`git push --force` 
+
+#### 方法二 撤销已经完成的 `git push` 操作
+
+1. **备份更改**
+
+   在撤销 `git push` 之前，要撤销的更改已经备份。通过创建一个新的分支或者备份当前工作目录的副本来实现这一点。
+
+  2. **查找要撤销的提交**
+
+     执行 `git log` 命令，找到要撤销的提交的哈希值。
+
+3. **强制推送到远程仓库**
+
+   执行 `git push --force <remote_name> <commit_id>:<branch_name>` 命令,其中 `<remote_name>` 是远程仓库名称，`<commit_id>` 是要撤销的提交的哈希值，`<branch_name>` 是分支名称。
+
+```
+找到想要撤销的提交的哈希值
+git log  
+执行强制推送命令。要撤销到一个名为 main 的分支，远程仓库名称为 origin，提交的哈希值为 abc123
+git push --force origin abc123:main 
+```
+
